@@ -1,10 +1,18 @@
 from importlib.metadata import PackageNotFoundError, version
 
 from agentguard.config import GuardConfig
+from agentguard.exceptions import AgentGuardBlockError
 from agentguard.guard import AgentGuard, Session
-from agentguard.models import GuardResult
+from agentguard.models import ConversationTurn, GuardResult
 
-__all__ = ["AgentGuard", "GuardConfig", "GuardResult", "Session"]
+__all__ = [
+    "AgentGuard",
+    "AgentGuardBlockError",
+    "ConversationTurn",
+    "GuardConfig",
+    "GuardResult",
+    "Session",
+]
 
 try:
     __version__ = version("agentx-sdk")
